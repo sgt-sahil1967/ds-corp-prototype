@@ -1,0 +1,232 @@
+Title:
+🛒 DS Corporation – Global RFQ Platform for Indian Products
+
+🧭 Goal
+
+Build a responsive web app prototype for DS Corporation that allows international buyers to:
+
+Paste product links from Indian e-commerce sites (Amazon, Flipkart, etc.).
+
+Automatically extract product details (title, image, price if available).
+
+Let users submit a Request for Quote (RFQ) with multiple product links.
+
+Admin receives RFQs, replies with quotes, and marks payment/shipping status.
+
+Focus on simple UX, RFQ workflow, and clean international branding (professional, trust-based design).
+
+🌐 Tech Stack
+
+Frontend: React + Tailwind CSS
+Backend: Node.js + Express or Next.js API routes
+Database: JSON or basic in-memory store (mock RFQs for now)
+Data Extraction: Open Graph metadata fetcher (like WhatsApp/Telegram preview)
+Deployment Target: Replit (self-contained web app)
+
+🧱 Core Pages and Flow
+1. Landing Page
+
+Header: DS Corporation logo, navigation (Home | About | RFQ | Contact)
+
+Hero section:
+
+Headline: “Bringing Indian Products to the World”
+
+Subtext: “Paste a product link from any Indian marketplace and get a personalized quote.”
+
+CTA: “Start an RFQ”
+
+Flags or icons for countries: 🇩🇪 🇫🇷 🇸🇪 🇨🇭 etc.
+
+Footer: contact info, email form
+
+2. RFQ Creation Page
+
+Purpose: Allow users to paste product URLs and generate a request for quote.
+
+Components:
+
+Input field: “Paste product link (Amazon, Flipkart, or any Indian store)”
+
+Button: “Fetch Product Info”
+
+Functionality (WhatsApp-style preview logic):
+When the user pastes a link, the app calls a backend API (/api/preview) that works exactly like WhatsApp or Telegram’s link unfurling system:
+
+The backend makes a server-side request to the provided URL.
+
+It extracts Open Graph metadata (og:title, og:image, og:description, and price if available).
+
+Returns JSON with the product preview data.
+
+The frontend displays a preview card (image + title + description + price).
+
+If extraction fails, fall back to a manual entry form:
+
+Product Name
+
+Description
+
+Quantity
+
+Optional upload (image or screenshot)
+
+Allow adding multiple products to one RFQ.
+
+Footer actions:
+
+Button: “Submit RFQ” → shows modal: “Your request has been received. RFQ ID: #RFQ2025-001”
+
+3. RFQ Confirmation Page
+
+Show thank-you message.
+
+Display summary of all requested products.
+
+Message: “Our team will review your request and send you a personalized quote via email.”
+
+4. Admin Dashboard (for DS team)
+
+Login via dummy credentials:
+
+/admin
+
+Username: admin
+
+Password: ds2025
+
+Dashboard features:
+
+Table view of RFQs:
+
+RFQ ID
+
+Customer Name / Email
+
+Status (New, Quoted, Paid, Shipped, Closed)
+
+Date Created
+
+Click any RFQ → opens detail view:
+
+List of products
+
+Editable quote fields (price, shipping, total)
+
+Button: “Send Quote PDF” (simulate)
+
+Status dropdown: New → Quoted → Paid → Shipped → Delivered
+
+Store all RFQs in local JSON (mock).
+
+5. Quote View (Customer side)
+
+Public link /quote/:id showing itemized quote.
+
+Buttons:
+
+“Accept Quote” → bank transfer instructions
+
+“Request Changes” → reopen
+
+“Reject Quote” → mark closed
+
+6. About Page
+
+Simple text about DS Corporation:
+
+“We source and customize Indian raw materials and products for global buyers — from textiles to handicrafts to specialized industrial goods.”
+
+7. Contact Page
+
+Contact form (Name, Email, Message)
+
+Office address and phone (mock)
+
+Social links or “Email us at support@dscorporation.in
+”
+
+🔁 RFQ Flow Summary
+
+User → Paste Product Link → WhatsApp-style Preview → Add Multiple → Submit RFQ
+→ Admin Dashboard → Review → Prepare Quote → Customer Accepts → Payment & Shipping
+
+⚙️ Backend Mock APIs
+
+POST /api/preview
+Simulates WhatsApp/Telegram-style link preview extraction.
+
+Input:
+
+{ "url": "https://www.amazon.in/dp/example" }
+
+
+Output:
+
+{
+  "success": true,
+  "title": "Product Title",
+  "image": "https://example.com/img.jpg",
+  "price": "₹1299",
+  "description": "Product short description",
+  "url": "https://amazon.in/example"
+}
+
+
+If extraction fails →
+
+{ "success": false, "manual_required": true }
+
+
+POST /api/rfq
+Accepts multiple products and stores a mock RFQ.
+Returns confirmation JSON with RFQ ID.
+
+GET /api/rfq/:id
+Returns RFQ details for admin/customer display.
+
+💄 Design Hints
+
+Professional + minimal + trust-oriented (blue/white palette).
+
+Use Tailwind shadow-xl, rounded-2xl, soft hover transitions.
+
+Flag icons or subtle map background for international appeal.
+
+Mobile responsive (iPhone, tablet).
+
+🧠 User Scenarios
+
+A buyer in Germany pastes 3 Amazon India links → sees preview cards → submits RFQ.
+
+Admin logs in → reviews RFQ → edits prices → sends quote.
+
+Buyer receives quote link → accepts → sees payment instructions.
+
+Admin marks it as paid → system updates status to “Shipping arranged.”
+
+🛠️ Optional Enhancements (for later)
+
+Multi-language (English, German, French)
+
+Multi-currency (INR → EUR conversion)
+
+File upload for specifications
+
+Email notifications
+
+Analytics dashboard
+
+✅ Deliverable
+
+Full React + Tailwind web app
+
+Working navigation
+
+Mock backend APIs (/api/preview, /api/rfq)
+
+WhatsApp-style link preview fetching system
+
+Admin dashboard with mock auth
+
+Clean, exportable UI for demo
