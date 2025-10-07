@@ -15,26 +15,26 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
-        <Link href="/">
-          <a className="flex items-center gap-2 hover-elevate rounded-md px-2 py-1 -ml-2" data-testid="link-home">
+        <Link href="/" data-testid="link-home">
+          <div className="flex items-center gap-2 hover-elevate rounded-md px-2 py-1 -ml-2 cursor-pointer">
             <Package className="h-6 w-6 text-primary" />
             <span className="text-xl font-semibold">DS Corporation</span>
-          </a>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <Link key={item.path} href={item.path}>
-              <a
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === item.path
-                    ? "text-foreground"
-                    : "text-muted-foreground"
-                }`}
-                data-testid={`link-nav-${item.label.toLowerCase()}`}
-              >
-                {item.label}
-              </a>
+            <Link
+              key={item.path}
+              href={item.path}
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                location === item.path
+                  ? "text-foreground"
+                  : "text-muted-foreground"
+              }`}
+              data-testid={`link-nav-${item.label.toLowerCase()}`}
+            >
+              {item.label}
             </Link>
           ))}
         </nav>
@@ -42,9 +42,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link href="/rfq">
-            <a>
-              <Button data-testid="button-start-rfq">Start an RFQ</Button>
-            </a>
+            <Button data-testid="button-start-rfq">Start an RFQ</Button>
           </Link>
         </div>
       </div>

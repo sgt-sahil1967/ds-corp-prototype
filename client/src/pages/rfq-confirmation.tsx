@@ -147,17 +147,13 @@ export default function RfqConfirmation() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href={`/quote/${rfq.id}`}>
-                    <a>
-                      <Button variant="outline" data-testid="button-view-quote">
-                        View Quote Status
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </a>
+                    <Button variant="outline" data-testid="button-view-quote">
+                      View Quote Status
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </Link>
                   <Link href="/rfq">
-                    <a>
-                      <Button data-testid="button-new-rfq">Create Another RFQ</Button>
-                    </a>
+                    <Button data-testid="button-new-rfq">Create Another RFQ</Button>
                   </Link>
                 </div>
               </div>

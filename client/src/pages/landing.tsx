@@ -69,22 +69,25 @@ export default function Landing() {
               Paste a product link from any Indian marketplace and get a personalized quote
             </p>
             
-            <div className="flex flex-wrap justify-center gap-3 mb-8 text-3xl">
-              <span title="Germany">🇩🇪</span>
-              <span title="France">🇫🇷</span>
-              <span title="Sweden">🇸🇪</span>
-              <span title="Switzerland">🇨🇭</span>
-              <span title="United Kingdom">🇬🇧</span>
-              <span title="Italy">🇮🇹</span>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <span className="text-sm font-medium text-muted-foreground">Germany</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-sm font-medium text-muted-foreground">France</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-sm font-medium text-muted-foreground">Sweden</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-sm font-medium text-muted-foreground">Switzerland</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-sm font-medium text-muted-foreground">United Kingdom</span>
+              <span className="text-muted-foreground">•</span>
+              <span className="text-sm font-medium text-muted-foreground">Italy</span>
             </div>
 
             <Link href="/rfq">
-              <a>
-                <Button size="lg" className="text-lg px-8 py-6" data-testid="button-hero-cta">
-                  Start an RFQ
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
+              <Button size="lg" className="text-lg px-8 py-6" data-testid="button-hero-cta">
+                Start an RFQ
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </Link>
           </div>
         </div>
@@ -168,12 +171,10 @@ export default function Landing() {
                 Start your first RFQ today and get a personalized quote from our team
               </p>
               <Link href="/rfq">
-                <a>
-                  <Button size="lg" className="text-lg px-8 py-6" data-testid="button-cta-bottom">
-                    Start Your First RFQ
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </a>
+                <Button size="lg" className="text-lg px-8 py-6" data-testid="button-cta-bottom">
+                  Start Your First RFQ
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
               </Link>
             </CardContent>
           </Card>

@@ -17,31 +17,39 @@ export function Footer() {
             <h4 className="font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-home">
-                    Home
-                  </a>
+                <Link
+                  href="/"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="link-footer-home"
+                >
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-about">
-                    About
-                  </a>
+                <Link
+                  href="/about"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="link-footer-about"
+                >
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/rfq">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-rfq">
-                    Create RFQ
-                  </a>
+                <Link
+                  href="/rfq"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="link-footer-rfq"
+                >
+                  Create RFQ
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-contact">
-                    Contact
-                  </a>
+                <Link
+                  href="/contact"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  data-testid="link-footer-contact"
+                >
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -67,14 +75,14 @@ export function Footer() {
 
           <div>
             <h4 className="font-medium mb-4">We Serve</h4>
-            <div className="flex flex-wrap gap-2 text-2xl">
-              <span title="Germany">🇩🇪</span>
-              <span title="France">🇫🇷</span>
-              <span title="Sweden">🇸🇪</span>
-              <span title="Switzerland">🇨🇭</span>
-              <span title="United Kingdom">🇬🇧</span>
-              <span title="Italy">🇮🇹</span>
-            </div>
+            <ul className="space-y-1 text-sm text-muted-foreground">
+              <li>Germany</li>
+              <li>France</li>
+              <li>Sweden</li>
+              <li>Switzerland</li>
+              <li>United Kingdom</li>
+              <li>Italy</li>
+            </ul>
           </div>
         </div>
 
